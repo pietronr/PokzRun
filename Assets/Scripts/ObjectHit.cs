@@ -4,7 +4,10 @@ public class ObjectHit : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other) 
     {
-        GetComponent<MeshRenderer>().material.color = Color.magenta;
-        Debug.Log("Player hit me!");
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GetComponent<MeshRenderer>().material.color = Color.magenta;
+            gameObject.tag = "Hit";
+        }
     }
 }
