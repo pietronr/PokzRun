@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    [SerializeField] float moveSpeed;
+    [SerializeField] float moveSpeed = 6f;
 
-    void Start()
+    private void Start()
     {
         PrintInstructions();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         MovePlayer();
     }
