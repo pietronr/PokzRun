@@ -8,6 +8,11 @@ public class Homing : MonoBehaviour
 
     Vector3 playerPos;
 
+    private void Awake()
+    {
+        gameObject.SetActive(false);
+    }
+
     private void Start()
     {
         playerPos = player.transform.position;
