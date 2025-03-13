@@ -20,8 +20,18 @@ public class Homing : MonoBehaviour
     }
 
     private void MoveTowardsPlayer() 
-    {
+    {        
         actualMoveSpeed = moveSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, playerPos, actualMoveSpeed);
+
+        DestroyWhenReached();
+    }
+
+    private void DestroyWhenReached() 
+    {
+        if (transform.position == playerPos)
+        {
+            Destroy(gameObject);
+        }
     }
 }
